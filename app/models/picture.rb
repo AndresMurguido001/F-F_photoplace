@@ -1,6 +1,7 @@
 class Picture < ApplicationRecord
   acts_as_votable
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
 
 def self.search(term)
@@ -10,6 +11,9 @@ def self.search(term)
     order('id DESC')
   end
 end
+
+
+
 
 
 end

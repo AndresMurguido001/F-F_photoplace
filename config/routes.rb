@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_for :installs
+
   root 'pictures#index'
   resources :pictures do
+    resources :comments
     member do
       put "like" => "pictures#upvote"
       put "unlike" => "pictures#downvote"
