@@ -1,22 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div style="text-align:center;">
 
-<p>
-  <strong>Title:</strong>
-  <%= @picture.title %>
-</p>
+  <p class="img-thumbnail">
+    <%= image_tag @picture.url %>
+  </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @picture.url %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @picture.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @picture.description %>
-</p>
-<% if user_signed_in?  %>
-<% if @picture.user_id == current_user.id  %>
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<% end %>
-<% end  %>
-<%= link_to 'Back', pictures_path %>
+  <p>
+    <strong>Description:</strong>
+    <%= @picture.description %>
+  </p>
+
+
+  <% if user_signed_in?  %>
+  <% if @picture.user_id == current_user.id  %>
+  <%= link_to 'Edit', edit_picture_path(@picture), class:"btn btn-info" %> |
+  <% end %>
+  <% end  %>
+  <%= link_to 'Back', pictures_path, class:"btn btn-primary" %>
+  <p id="notice"><%= notice %></p>
+
+  <br>
+
+  <h2> <%= @picture.comments.count %> Comments </h2>
+   <%= render @picture.comments %>
+  <h3 > <i class="fas fa-comment-alt"></i>  Add a Comment: </h3>
+   <%= render 'comments/form' %>
+
+  <a href="https://twitter.com/">  <i class="fab fa-twitter"></i>  </a>
+  <a href="https://facebook.com/">  <i class="fab fa-facebook-square"></i>  </a>
+  <a href="https://reddit.com/">  <i class="fab fa-reddit-square"></i>  </a>
+  <a href="https://pinterest.com/">  <i class="fab fa-pinterest-square">  </i></a>
+
+
+
+</div>
