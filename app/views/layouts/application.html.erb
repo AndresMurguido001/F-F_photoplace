@@ -3,7 +3,6 @@
   <head>
     <title>Photoplace</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -21,10 +20,17 @@
       <% else  %>
       <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
+      <p class= "navbar-text">Hello </p>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <%= form_tag(pictures_path, method: :get) do %>
+
+      <p class="navbar-brand"><%= text_field_tag :term, params[:term] %></p>
+
+      <p class="navbar-brand"><%= submit_tag 'Search', name: nil %></p>
+      <% end %>
       <% if user_signed_in?  %>
-      <li> <%= link_to "New Picture", new_picture_path %> </li>
+      <p class="navbar-item"> <%= link_to "New Picture", new_picture_path %> </p>
       <%end %>
     </ul>
 

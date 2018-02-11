@@ -14,6 +14,12 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- img {
-   max-width: 500px
- }
+ @import "font-awesome";
+
+.thumb-box{
+  height: 350px;
+  box-shadow: 2px 2px #e3e5e8;
+}
+.like:hover{
+  text-decoration: none;
+}

@@ -1,32 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pictures</h1>
 
 
 
 
-      <!-- <h2>Title</h2>
-      <h3>Description</h3> -->
 
 
-
-
-      <div class="container-fluid">
-
+          <h1>Pictures</h1>
 
     <% @pictures.each do |picture| %>
-        <p><%= picture.title %></p>
-        <p> <%= picture.description %></p>
-        <%= link_to 'Show', picture %>
-        <% if user_signed_in?  %>
-        <% if picture.user_id == current_user.id  %>
-        <%= link_to 'Edit', edit_picture_path(picture) %>
-      <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end  %>
-      <% end  %>
-      <p><%=link_to image_tag(picture.url), picture %><br></p>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail thumb-box">
+        <h2 style= "text-align: center"><%= picture.title %></h2>
+        <%=link_to image_tag(picture.url, size: "300x300"), picture%>
+        <div class="caption" style= "text-align: center">
 
-    <% end %>
-  </div>
+
+          <%= link_to like_picture_path(picture), class: "like", method: :put do %>
+          <button type="button" class="btn btn-info">
+        <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center"></span>
+          <span class = "badge"><%= picture.get_upvotes.size %></span>
+          </button>
+          <% end  %>
+
+          <%= link_to unlike_picture_path(picture), class: "like", method: :put do %>
+          <button type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center"></span>
+            <span class="badge"><%= picture.get_downvotes.size %> </span>
+          </button>
+          <% end  %>
+
+        </div>
+      </div>
+
+    </div>
+
+<% end %>
+
+
+
 
 <!-- <br> -->

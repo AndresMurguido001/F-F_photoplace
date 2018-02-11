@@ -1,11 +1,13 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_picture, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /pictures
   # GET /pictures.json
   def index
     @pictures = Picture.all.order("created_at DESC")
     @picture = Picture.new.url
+    @pictures = Picture.search(params[:term])
   end
 
   # GET /pictures/1
@@ -13,6 +15,17 @@ class PicturesController < ApplicationController
   def show
 
   end
+#upvote_from user
+  def upvote
+    @picture.upvote_from current_user
+    redirect_to root_path
+  end
+
+  def downvote
+    @picture.downvote_from current_user
+    redirect_to root_path
+  end
+
 
   # GET /pictures/new
   def new
@@ -71,6 +84,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:title, :url, :description)
+      params.require(:picture).permit(:title, :url, :description, :term)
     end
 end
