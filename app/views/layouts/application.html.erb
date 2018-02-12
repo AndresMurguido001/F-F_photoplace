@@ -10,36 +10,46 @@
   </head>
 
   <body>
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to "Pictures", root_path, class: "navbar-brand" %>
+
+
+<div class="content">
+
+<nav class="navbar navbar-default" style="background-color: #97befc">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      <%= link_to "Pictures", root_path %>
     </div>
     <ul class="nav navbar-nav">
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
       <% if user_signed_in?  %>
       <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
       <% else  %>
-      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to "Login", new_user_session_path, class:"nav-item" %></li>
       <% end %>
-      <p class= "navbar-text">Hello </p>
+
+      <p class= "navbar navbar-brand">Hello <% if user_signed_in? %>
+                              <%= current_user.email %></p>
+                              <% end  %>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <%= form_tag(pictures_path, method: :get) do %>
 
-      <p class="navbar-brand"><%= text_field_tag :term, params[:term] %></p>
+      <p class="navbar-brand"><%= text_field_tag :term, params[:term], placeholder: "Search" %></p>
 
-      <p class="navbar-brand"><%= submit_tag 'Search', name: nil %></p>
+      <p class="navbar-brand"><%= submit_tag 'Search', name: nil, class: "btn btn-outline-secondary btn-sm" %></p>
       <% end %>
-      <% if user_signed_in?  %>
-      <p class="navbar-item"> <%= link_to "New Picture", new_picture_path %> </p>
-      <%end %>
+
+
     </ul>
+    <% if user_signed_in?  %>
+    <p class="navbar-brand"> <%= link_to "New Picture" %> </p>
+    <%end %>
 
   </div>
 
 </nav>
-
+</div>
 
     <!-- <p class="notice"><%= notice %></p> -->
           <p class="alert"><%= alert %></p>

@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-ActiveRecord::Schema.define(version: 20180211012143) do
+ActiveRecord::Schema.define(version: 20180212012551) do
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
@@ -47,6 +45,10 @@ ActiveRecord::Schema.define(version: 20180211012143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "attachment_file_name"
+    t.string "attachment_content_type"
+    t.integer "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +64,10 @@ ActiveRecord::Schema.define(version: 20180211012143) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

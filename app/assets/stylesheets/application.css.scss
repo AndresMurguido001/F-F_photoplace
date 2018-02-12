@@ -16,10 +16,77 @@
  @import "bootstrap";
  @import "font-awesome";
 
+.loginform{
+  width: 300px;
+}
+
+.login-background {
+  background-image: url('loginBack.jpeg');
+  height: 700px;
+  margin-top: -70px;
+}
+.navbar-brand {
+  font-family: 'Mukta Mahee', sans-serif
+}
+
+
 .thumb-box{
-  height: 350px;
+  height: 375px;
   box-shadow: 2px 2px #e3e5e8;
 }
 .like:hover{
   text-decoration: none;
+}
+h1{
+  font-family: 'Mukta Mahee', sans-serif;
+}
+.container-main{
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:url("background.jpeg");
+  margin-bottom: 10px;
+
+}
+.heading{
+  position: relative;
+  top: 100px;
+  left: 20px;
+}
+.caption h4{
+  line-height: 35px;
+  width: 25%;
+  font-family: 'Mukta Mahee', sans-serif;
+}
+.heading h1{
+  font-size: 55px;
+  text-shadow: 2px 2px #b3b8bf;
+}
+.loginform{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+}
+.body > div:nth-child(7) > div > div > a:nth-child(1):hover{
+  background-color: none;
+}
+.like:hover {
+  background: none!important;
+}
+a:hover {
+  background: none!important;
+}
+.col{
+  height: 400px;
+}
+.col-content {
+  font-size: 20px;
+  line-height: 35px;
+  top: 15px;
+  position: relative;
+}
+#col{
+  padding-top: 10px;
 }

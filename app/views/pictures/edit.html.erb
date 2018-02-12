@@ -1,6 +1,11 @@
 <h1>Editing Picture</h1>
 
-<%= render 'form', picture: @picture %>
+<%= render 'form2', picture: @picture %>
+<div class="containers">
+<canvas id="canvas"></canvas>
+<%=image_tag @picture.url, class: "image" %>
 
-<%= link_to 'Show', @picture %> |
-<%= link_to 'Back', pictures_path %>
+</div>
+
+<button type="button" name="button"><%= link_to 'Show', @picture %></button>
+<button type="button" name="button"><%= link_to 'Back', pictures_path %></button>

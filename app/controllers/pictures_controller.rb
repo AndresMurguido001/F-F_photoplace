@@ -41,6 +41,7 @@ class PicturesController < ApplicationController
   def create
     @picture = current_user.pictures.build(picture_params)
 
+
     respond_to do |format|
       if @picture.save
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
@@ -84,6 +85,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:title, :url, :description, :term)
+      params.require(:picture).permit(:title, :url, :description, :term, :attachment)
     end
 end
