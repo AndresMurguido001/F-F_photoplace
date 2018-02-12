@@ -12,6 +12,9 @@
  *
  //= require_tree
  */
+
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
@@ -37,9 +40,8 @@
 .like:hover{
   text-decoration: none;
 }
-h1{
-  font-family: 'Mukta Mahee', sans-serif;
-}
+
+
 .container-main{
   height: 550px;
   background-position: center;
@@ -89,4 +91,46 @@ a:hover {
 }
 #col{
   padding-top: 10px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content .modal-content{
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: #f1f1f1;
+    width: 100%;
+}
+
+
+.edit{
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 20px;
+}
+
+
+.view{
+  text-align: center;
+  background-image: url("background1.jpeg");
+  background-repeat: none;
+  background-size: 100%
+}
+
+
+.picture-text {
+  color: white;
+  font-size: 15px;
+}
+
+.boxes{
+  color: #000;
+
 }

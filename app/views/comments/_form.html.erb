@@ -2,12 +2,12 @@
 
 <%= form_for([@picture,@picture.comments.build]) do |f| %>
   <p>
-    <%= f.label :name %> <br>
+    <%= f.label :name, class: "picture-text" %> <br>
     <%= f.text_field :name %>
   </p>
 
   <p>
-    <%= f.label :body %> <br>
+    <%= f.label :body, class: "picture-text" %> <br>
     <%= f.text_area :body %>
   </p>
 
@@ -17,4 +17,4 @@
 
   <% end %>
 
-  </div>
+</div>

@@ -1,11 +1,9 @@
-<h1>Editing Picture</h1>
 
-<%= render 'form2', picture: @picture %>
-<div class="containers">
-<canvas id="canvas"></canvas>
-<%=image_tag @picture.url, class: "image" %>
-
-</div>
-
-<button type="button" name="button"><%= link_to 'Show', @picture %></button>
-<button type="button" name="button"><%= link_to 'Back', pictures_path %></button>
+<body class="view" >
+ <div class="content">
+    <%= render 'form2', picture: @picture %>
+    <%= link_to 'Back', pictures_path, class:"btn btn-primary" %> |
+    <%= link_to 'Destroy', picture_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %>
+    <p id="notice"><%= notice %></p>
+ </div>
+</body>
