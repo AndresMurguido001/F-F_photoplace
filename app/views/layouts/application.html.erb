@@ -22,7 +22,9 @@
       <% else  %>
       <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
-      <p class= "navbar-text">Hello </p>
+      <p class= "navbar-text">Hello, <% if user_signed_in? %>
+                                    <%= current_user.email %>
+                                    <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <%= form_tag(pictures_path, method: :get) do %>
@@ -32,7 +34,7 @@
       <p class="navbar-brand"><%= submit_tag 'Search', name: nil %></p>
       <% end %>
       <% if user_signed_in?  %>
-      <p class="navbar-item"> <%= link_to "New Picture", new_picture_path %> </p>
+      <p class="navbar-item" data-toggle="modal" data-target="#myModal"> <%= link_to "New Picture", new_picture_path %> </p>
       <%end %>
     </ul>
 

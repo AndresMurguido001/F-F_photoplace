@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+  <div class="modal-content" style="width: 90%; margin-left: 5%; margin-bottom: 5%;" >
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"> <%= link_to 'X', pictures_path %>  </button>
+      <h4 class="modal-title">Picture data: </h4>
+    </div>
+
+  <div class="modal-body">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :picture_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :picture_url %>
-  </div>
-
-  <div class="field">
+    <%= form.text_field :title, id: :picture_title, class: "boxes" %>
     <%= form.label :description %>
-    <%= form.text_field :description, id: :picture_description %>
+    <%= form.text_field :description, id: :picture_description, class: "boxes" %>
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :picture_url, class: "boxes" %>
   </div>
 
-  <div class="actions">
+  <div class="actions" style="margin-left:1.5rem; color: #000;" >
     <%= form.submit %>
   </div>
+</div>
+
 <% end %>
