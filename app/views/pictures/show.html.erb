@@ -1,8 +1,15 @@
 <body class="view" >
-
+<% if @picture.attachment.present? %>
+  <p>
+    <%= image_tag @picture.attachment.url %>
+  </p>
+<% else %>
   <p class="img-thumbnail">
     <%= image_tag @picture.url %>
   </p>
+<% end %>
+
+
 
   <p class="picture-text">
     <strong>Title:</strong>
@@ -14,9 +21,7 @@
     <%= @picture.description %>
   </p>
 
-  <p>
-    <%= image_tag @picture.attachment.url %>
-  </p>
+
 
   <% if user_signed_in?  %>
   <% if @picture.user_id == current_user.id  %>
@@ -32,7 +37,7 @@
   <h2 class="picture-text"> <%= @picture.comments.count %> Comments </h2>
    <%= render @picture.comments %>
 
-  <h3 > <%= fa_icon "comments", class: "icons" %>  Add a Comment: </h3>
+  <h3> <%= fa_icon "comments", class: "icons" %>  Add a Comment: </h3>
    <%= render 'comments/form' %>
 
   <a href="https://twitter.com/">  <%= fa_icon "twitter-square 2x", class: "icons" %>  </a>

@@ -9,24 +9,27 @@
 
 
 
-       <br>
 
 
+
+<div class="homepageBack">
 
 <div class="container-main">
-  <div class="heading">
+  <div class="heading" id="welcome">
+    <div class="maintitle">
     <h1>Welcome<br>
       To<br>
       PhotoPlace</h1>
-      <div class="caption">
-        <h4 style="text-align: left">One place for all your photo needs.<br> </h4>
+      <h4 style="text-align: left">One place for all your photo needs.<br> </h4>
       </div>
+
+      
 
   </div>
 </div>
+</div>
 
 
-<div class="wood">
 <div class="container text-center">
 
   <div class="row justify-content-between">
@@ -86,12 +89,13 @@
 
 
     <% @pictures.each do |picture| %>
+    <div class="move">
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail thumb-box">
         <h2 style= "text-align: center"><%= picture.title %></h2>
         <%=link_to image_tag(picture.url, size: "300x300"), picture, class: "img-fluid"%>
         <% if picture.attachment.url.present?  %>
-        <%= link_to(image_tag(picture.attachment.url, style: "thumbnail"), picture) unless picture.attachment_file_name.nil? %>
+        <%= link_to(image_tag(picture.attachment.url), picture) unless picture.attachment_file_name.nil? %>
         <% end  %>
 
 
