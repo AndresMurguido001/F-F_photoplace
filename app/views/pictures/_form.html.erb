@@ -1,5 +1,6 @@
 <body>
 <%= form_with(model: picture, local: true, html:{multipart: true}) do |form| %>
+
   <% if picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
@@ -29,13 +30,16 @@
 
 
   <div class="modal-body" >
-    <p style="text-align:center;">
+    <p style="text-align:center">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :picture_title, class: "boxes" %>
+    <%= form.text_field :title, id: :picture_title, class: "boxes", style: "margin-top: 5px" %><br>
+
     <%= form.label :description %>
-    <%= form.text_field :description, id: :picture_description, class: "boxes" %>
+    <%= form.text_field :description, id: :picture_description, class: "boxes", style: "margin-top: 5px" %><br>
+
     <%= form.label :url %>
-    <%= form.text_field :url, id: :picture_url, class: "boxes" %>
+    <%= form.text_field :url, id: :picture_url, class: "boxes", style: "margin-top: 5px" %><br>
+
   </p>
   </div>
      <p style="text-align:center;">
@@ -52,8 +56,10 @@
      <span> <br>  </span>
      </p>
 
+
+
   <div style="margin-left: 45%;" class="field">
-   <%= form.file_field :attachment  %>  <!-- Add style "Choose File", class: "btn btn-light" -->
+   <%= form.file_field :attachment, class: "attachment"  %>  <!-- Add style "Choose File", class: "btn btn-light" -->
   </div>
 
      <span> <br>  </span>
@@ -63,6 +69,7 @@
     <%= form.submit "Update Picture", class: "btn btn-primary btn-lg" %>
     </p>
   </div>
+
 
 
 </div>
