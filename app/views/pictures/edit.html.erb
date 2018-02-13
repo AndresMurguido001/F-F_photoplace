@@ -1,9 +1,9 @@
 
-<body class="view" >
- <div class="content">
-    <%= render 'form2', picture: @picture %>
-    <%= link_to 'Back', pictures_path, class:"btn btn-primary" %> |
-    <%= link_to 'Destroy', picture_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %>
+<body class="view">
+ <div class="content" >
+    <%= render 'form', picture: @picture %>
+    <%= link_to 'Back', pictures_path, class:"btn btn-primary btn-lg" %> |
+    <%= link_to 'Destroy', picture_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-lg" %>
     <p id="notice"><%= notice %></p>
  </div>
 </body>

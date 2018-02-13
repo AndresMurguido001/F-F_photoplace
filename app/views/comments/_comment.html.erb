@@ -1,7 +1,7 @@
 <div class="picture-text">
-<p> <%= comment.name %>:   <%= comment.body %> </p>
-<p>  <%= time_ago_in_words(comment.created_at) %>  </p>
+<p class="picture-text"> <%= comment.name %>:   <%= comment.body %> </p>
+<p class="picture-text">  <%= time_ago_in_words(comment.created_at) %>  </p>
 
-<p> <%= link_to 'Delete', [comment.picture, comment], method: :delete, data: {confirm: 'Are you sure'}, class:"btn btn-danger" %>  </p>
+<p> <%= link_to 'Delete', [comment.picture, comment], method: :delete, data: {confirm: 'Are you sure'}, class:"btn btn-danger btn-lg" %>  </p>
 </div>
 <br>

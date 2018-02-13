@@ -20,25 +20,25 @@
 
   <% if user_signed_in?  %>
   <% if @picture.user_id == current_user.id  %>
-  <%= link_to 'Edit', edit_picture_path(@picture), class:"btn btn-info" %> |
+  <%= link_to 'Edit', edit_picture_path(@picture), class:"btn btn-info btn-lg" %> |
   <% end %>
   <% end  %>
-  <%= link_to 'Back', pictures_path, class:"btn btn-primary" %> |
-  <%= link_to 'Destroy', picture_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %>
+  <%= link_to 'Back', pictures_path, class:"btn btn-primary btn-lg" %> |
+  <%= link_to 'Destroy', picture_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-lg" %>
   <p id="notice"><%= notice %></p>
 
   <br>
 
-  <h2 class="picture-text"> <%= @picture.comments.count %> Comments </h2>
+  <h2 style="color: white;"> <%= @picture.comments.count %> Comments </h2>
    <%= render @picture.comments %>
 
-  <h3 > <%= fa_icon "comments", class: "icons" %>  Add a Comment: </h3>
+  <h3 style="color: white;"> <%= fa_icon "comments", class: "icons" %>  Add a Comment: </h3>
    <%= render 'comments/form' %>
 
-  <a href="https://twitter.com/">  <%= fa_icon "twitter-square 2x", class: "icons" %>  </a>
-  <a href="https://facebook.com/">  <%= fa_icon "facebook-square 2x", class: "icons" %>  </a>
-  <a href="https://reddit.com/">  <%= fa_icon "reddit-square 2x", class: "icons" %>  </a>
-  <a href="https://pinterest.com/">  <%= fa_icon "pinterest-square 2x" %>  </a>
+  <a style="color: white;" href="https://twitter.com/">  <%= fa_icon "twitter-square 3x", class: "icons" %>  </a>
+  <a style="color: blue;" href="https://facebook.com/">  <%= fa_icon "facebook-square 3x", class: "icons" %>  </a>
+  <a style="color: orange;" href="https://reddit.com/">  <%= fa_icon "reddit-square 3x", class: "icons" %>  </a>
+  <a style="color: red;" href="https://pinterest.com/">  <%= fa_icon "pinterest-square 3x", class: "icons" %>  </a>
 
 
 
