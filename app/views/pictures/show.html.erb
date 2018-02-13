@@ -1,8 +1,15 @@
 <body class="view" >
-
+<% if @picture.attachment.present? %>
+  <p>
+    <%= image_tag @picture.attachment.url %>
+  </p>
+<% else %>
   <p class="img-thumbnail">
     <%= image_tag @picture.url %>
   </p>
+<% end %>
+
+
 
   <p class="picture-text">
     <strong>Title:</strong>
@@ -14,9 +21,7 @@
     <%= @picture.description %>
   </p>
 
-  <p>
-    <%= image_tag @picture.attachment.url %>
-  </p>
+
 
   <% if user_signed_in?  %>
   <% if @picture.user_id == current_user.id  %>
