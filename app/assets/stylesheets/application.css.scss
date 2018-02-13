@@ -19,43 +19,89 @@
  @import "bootstrap";
  @import "font-awesome";
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+
+  }
+}
+#welcome{
+  width: 100%;
+  animation: fadeIn 2s linear ;
+}
+.maintitle{
+  position: relative;
+  top: 100px;
+  left: 20px;
+}
+
+body > div.content > nav > div {
+  z-index: 100;
+}
+.front {
+  position: relative;
+  z-index: 100;
+}
+.homepageBack {
+  position: relative;
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:url("background.jpeg");
+  margin-bottom: 10px;
+  top: -165px;
+}
+
+p .alert {
+  position: relative;
+}
+p .notice {
+  position: relative;
+}
+
 .loginform{
+  top: 100px;
   width: 300px;
 }
 
 .login-background {
+  position: relative;
   background-image: url('loginBack.jpeg');
   height: 700px;
-  margin-top: -70px;
+  top: -70px;
+  background-size: cover;
 }
 .navbar-brand {
   font-family: 'Mukta Mahee', sans-serif
 }
-
-
+body > div.container.text-center {
+  position: relative;
+  top: -150px;
+}
+.move {
+  position: relative;
+  top: -200px;
+}
 .thumb-box{
+  position: relative;
   height: 375px;
-  box-shadow: 2px 2px #e3e5e8;
+  border: 1px solid black;
+  border-style: inset;
+  box-shadow: 4px 4px 4px 4px #e3e5e8;
+  border-radius: 10%;
 }
 .like:hover{
   text-decoration: none;
 }
 
 
-.container-main{
-  height: 550px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image:url("background.jpeg");
-  margin-bottom: 10px;
 
-}
-.heading{
-  position: relative;
-  top: 100px;
-  left: 20px;
-}
+
 .caption h4{
   line-height: 35px;
   width: 25%;
@@ -64,6 +110,8 @@
 .heading h1{
   font-size: 55px;
   text-shadow: 2px 2px #b3b8bf;
+  position: relative;
+  width: 200px;
 }
 .loginform{
   margin-left: auto;
