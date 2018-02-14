@@ -5,7 +5,7 @@
   </p>
 <% else %>
   <p class="img-thumbnail">
-    <%= image_tag @picture.url %>
+    <%= image_tag @picture.url  %>
   </p>
 <% end %>
 
@@ -41,7 +41,7 @@
    <%= render 'comments/form' %>
 
   <a style="color: white;" href="https://twitter.com/">  <%= fa_icon "twitter-square 3x", class: "icons" %>  </a>
-  <a style="color: blue;" href="https://facebook.com/">  <%= fa_icon "facebook-square 3x", class: "icons" %>  </a>
+  <a style="color: #337ab7;;" href="https://facebook.com/">  <%= fa_icon "facebook-square 3x", class: "icons" %>  </a>
   <a style="color: orange;" href="https://reddit.com/">  <%= fa_icon "reddit-square 3x", class: "icons" %>  </a>
   <a style="color: red;" href="https://pinterest.com/">  <%= fa_icon "pinterest-square 3x", class: "icons" %>  </a>
 
