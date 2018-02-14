@@ -73,7 +73,7 @@
         <div class="caption" style= "text-align: center">
 
 
-          <%= link_to like_picture_path(picture), class: "like", method: :put do %>
+          <%= link_to like_picture_path(picture, size: "300x300"), class: "like", method: :put do %>
           <button type="button" class="btn btn-default">
         <span class="glyphicon glyphicon-thumbs-up"></span>
           <span class = "badge"><%= picture.get_upvotes.size %></span>
