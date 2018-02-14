@@ -18,12 +18,12 @@ class PicturesController < ApplicationController
 #upvote_from user
   def upvote
     @picture.upvote_from current_user
-    redirect_to root_path
+    # redirect_to root_path
   end
 
   def downvote
     @picture.downvote_from current_user
-    redirect_to root_path
+    # redirect_to root_path
   end
 
 

@@ -1,0 +1,3 @@
+// Turbolinks.clearCache()
+// Turbolinks.visit("<%= root_path %>", {"action":"replace"})
+$('.<%= dom_id(@picture) %> .like .badge').text(<%= @picture.get_upvotes.size %>);

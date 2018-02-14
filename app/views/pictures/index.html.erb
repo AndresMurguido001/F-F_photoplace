@@ -89,31 +89,34 @@
 
 
     <% @pictures.each do |picture| %>
-    <div class="move">
+    <div class="move <%= dom_id(picture) %>">
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail thumb-box">
         <h2 style= "text-align: center"><%= picture.title %></h2>
         <%=link_to image_tag(picture.url, size: "300x300"), picture, class: "img-fluid"%>
         <% if picture.attachment.url.present?  %>
-        <%= link_to(image_tag(picture.attachment.url), picture) unless picture.attachment_file_name.nil? %>
-        <% end  %>
+
+          <%= link_to(image_tag(picture.attachment.url, size: "300x300"), picture) unless picture.attachment_file_name.nil? %>
+          <% end  %>
+
+
 
 
         <div class="caption" style= "text-align: center">
 
 
-          <%= link_to like_picture_path(picture, size: "300x300"), class: "like", method: :put do %>
+          <%= link_to like_picture_path(picture), class: "like", method: :put, remote: true do %>
           <button type="button" class="btn btn-default">
         <span class="glyphicon glyphicon-thumbs-up"></span>
           <span class = "badge"><%= picture.get_upvotes.size %></span>
           </button>
           <% end  %>
 
-          <%= link_to unlike_picture_path(picture), class: "like", method: :put do %>
-          <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-thumbs-down"></span>
-            <span class="badge"><%= picture.get_downvotes.size %> </span>
-          </button>
+          <%= link_to unlike_picture_path(picture), class: "unlike", method: :put, remote: true do %>
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              <span class="badge"><%= picture.get_downvotes.size %> </span>
+            </button>
           <% end  %>
 
 

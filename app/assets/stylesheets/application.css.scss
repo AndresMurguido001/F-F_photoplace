@@ -35,7 +35,7 @@
 }
 .maintitle{
   position: relative;
-  top: 100px;
+  top: 150px;
   left: 20px;
 }
 
@@ -54,7 +54,7 @@ body > div.content > nav > div {
   background-size: cover;
   background-image:url("background.jpeg");
   margin-bottom: 10px;
-  top: -165px;
+  top: -200px;
 }
 
 p .alert {
@@ -183,3 +183,9 @@ a:hover {
   color: #000;
 
 }
+
+.anchor {
+    display:inline-block;
+    padding-top:100px;
+    margin-top:-100px;
+ }
